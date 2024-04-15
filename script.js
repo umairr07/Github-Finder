@@ -21,6 +21,10 @@ btn.addEventListener('click', function () {
 
                 let div = document.createElement('div');
 
+                const dateTimeString = `${data.created_at}`;
+                const dateOnly = dateTimeString.substring(0, 10);
+                console.log(dateOnly);
+
                 div.innerHTML = `
                 <div class="main-container mt-10 bg-gray-200 p-5 rounded-lg">
                     <div class="flex">
@@ -31,7 +35,7 @@ btn.addEventListener('click', function () {
                                 <a class="mt-8" href="${data.html_url}">@${data.login ? data.login : '-'}</a>
                             </div>
                             <div class="inner-right mt-8">
-                                <p>Joined ${data.created_at ? data.created_at : '-'}</p>
+                                <p>Joined ${dateOnly ? dateOnly : '-'}</p>
                             </div>
                         </div>
                     </div>
